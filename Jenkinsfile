@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                mvn clean compile
+                bat 'mvn clean compile'
             }
 
             post {
                 success {
-                    start "" mvn tomcat7:run
+                    bat 'start "" mvn tomcat7:run'
                 }
             }   
         }
